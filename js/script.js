@@ -15,4 +15,16 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
+
+
+  //Другие аукционы .auction-card__item//
+  const list = document.getElementById('auction-card__list_js');
+  const moreButton = document.getElementById('button-hidde');
+  moreButton.addEventListener('click', function () {
+    list.classList.toggle('full');
+  });
+
+
+
+
 });

@@ -744,7 +744,7 @@ ul {
   display: flex;
 }
 
-.new__stikers img:not(:last-child) {
+.new__stikers picture:not(:last-child) {
   margin-right: 28px;
 }
 
@@ -1199,20 +1199,20 @@ ul {
 
 
 
-@media (max-width: 1303px) {
+@media (max-width: 1357px) {
   .container {
     padding: 0 36px;
   }
 
 
-  /*** hero-1303px ***/
+  /*** hero-1357px ***/
   .hero__text {
     width: 65%;
   }
-  /*** // hero-1303px ***/
+  /*** // hero-1357px ***/
 
 
-  /*** auction-bet-1303px ***/
+  /*** auction-bet-1357px ***/
   .auction-bet__props {
     flex-direction: column;
   }
@@ -1226,16 +1226,31 @@ ul {
   .auction-bet__timer {
     max-width: 461px;
   }
-  /*** // auction-bet-1303px ***/
+  /*** // auction-bet-1357px ***/
 
 
-  /*** auction-card-1303px ***/
+  /*** auction-card-1357px ***/
   .auction-card__list {
-    grid-template-columns: repeat(3, 296px);
+    grid-template-columns: repeat(3, 1fr);
     gap: 36px 32px;
+    margin-bottom: 30px;
   }
 
-  /*** // auction-card-1303px ***/
+  /*Скрываем часть услуг*/
+  .auction-card__item {
+    display: none;
+  }
+  
+  .auction-card__item:nth-child(-n+6) {
+      display: block;
+  }
+
+  .full .auction-card__item {
+      display: block;
+  }
+  /* // Скрываем часть услуг*/
+
+  /*** // auction-card-1357px ***/
 
 
 
