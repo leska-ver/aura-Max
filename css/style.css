@@ -30,6 +30,7 @@
   --color-athensGray: #ededf2;
   --color-manatee: #95959d;
   --color-jumbo: #717178;
+  --color-tuna: #37373E;
 }
 
 html {
@@ -139,7 +140,11 @@ ul {
   border-radius: inherit;
   background: linear-gradient(180deg, #46F4DB 27.08%, #57D272 100%);
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+  -ms-transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -o-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
   pointer-events: none;
 }
 
@@ -207,7 +212,7 @@ ul {
   padding: 0 12px;
 }
 
-/***Шапка header 1280px ***/
+/***Шапка header-1920px ***/
 .header {
   padding: 11px 0 9px;
   background-color: var(--color-white);
@@ -313,10 +318,10 @@ ul {
 .header__button:focus::after {
   opacity: 1;
 }
-/*** // Шапка header 1280px ***/
+/*** // Шапка header-1920px ***/
 
 
-/*** hero-1280px ***/
+/*** hero-1920px ***/
 .hero {
   padding: 161px 0;
   background: url("../img/hero-stickers.png") top right no-repeat;
@@ -430,10 +435,10 @@ ul {
   position: relative;
   z-index: 5;
 }
-/*** // hero-1280px ***/
+/*** // hero-1920px ***/
 
 
-/*** auction-bet-1280px ***/
+/*** auction-bet-1920px ***/
 .auction-bet {
   padding: 90px 0 45px;
 }
@@ -572,10 +577,10 @@ ul {
   font-size: 20px;
   background-color: var(--color-turquoiseBlue);  
 }
-/*** // auction-bet-1280px ***/
+/*** // auction-bet-1920px ***/
 
 
-/*** auction-card-1280px ***/
+/*** auction-card-1920px ***/
 .auction-card {
   padding: 44px 0 89px;
 }
@@ -713,12 +718,12 @@ ul {
   border: 5px solid var(--color-emerald);
   background-color: var(--color-emerald); 
 }
-/*** // auction-card-1280px ***/
+/*** // auction-card-1920px ***/
 
 
-/*** new-1280px ***/
+/*** new-1920px ***/
 .new {
-  padding: 90px 0 40px;
+  padding: 90px 0;
   background-color: var(--color-dark);
 }
 
@@ -769,12 +774,11 @@ ul {
 .new__pagination .swiper-pagination-bullet-active {
   background-color: var(--color-persianRed);
 }
-/*** // new-1280px ***/
+/*** // new-1920px ***/
 
 
-/*** subscribe-1280px ***/
+/*** subscribe-1920px ***/
 .subscribe {
-  padding: 50px 0 0;
   background-color: var(--color-persianRed);
 }
 
@@ -863,13 +867,13 @@ ul {
 .subscribe__form-checkbox-input:checked + .subscribe__form-checkbox-text::after {
   opacity: 1;
 }
-/*** // subscribe-1280px ***/
+/*** // subscribe-1920px ***/
 
 
 
-/*** Скачать файл become-author-1280px ***/
+/*** Скачать файл become-author-1920px ***/
 .become-author {
-  padding: 90px 0 40px;
+  padding: 90px 0;
 }
 
 .become-author__container {
@@ -1013,30 +1017,138 @@ ul {
   font-size: 20px;
   background-color: var(--color-turquoiseBlue);
 }
-/*** // become-author-1280px ***/
+/*** // become-author-1920px ***/
 
 
-/*** top-info-1280px ***/
+/*** top-1920px ***/
+.top {
+  padding: 90px 0 72px;
+  background-color: var(--color-dark);
+}
+
+.top__title {
+  margin-bottom: 32px;
+  color: var(--color-white);
+}
+
+.top__list {
+  display: grid;
+  grid-template-columns: repeat(2, 48.8%);
+  gap: 32px;
+  padding-left: 0;
+}
+
+.top__product {
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  border: 1px solid transparent;
+  background-color: var(--color-white);
+}
+
+.top__product-image {
+  margin-right: 32px;
+  border-radius: 40px 0px 0px 40px;
+  padding: 15px;
+  padding-right: 0;
+  background-color: var(--color-athensGray);  
+}
+
+.top__product-owner {
+  margin-bottom: 11px;
+}
+
+.top__product-nickname {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.top__product-title {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.top__product-price {
+  font-weight: 700;
+}
+
+.top__product-price-dollars {
+  font-weight: 400;
+  color: var(--color-manatee);
+}
+/*** // top-1920px ***/
+
+
+/*** top-info-1920px ***/
+.top-info {
+  padding: 31px 0 33px;
+  background-color: var(--color-tuna);
+}
+
+.top-info__title {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-family: 'Muller', sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--color-white);
+}
+
 .top-info__content {
   display: flex;
 }
 
 .top-info__list {  
   margin-right: 32px;
-  width: calc(50% - 32px / 2);
+  width: calc(63% - 32px / 2);
 }
 
+.top-info__item {
+  padding-left: 40px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  color: #fff;  
+  background-repeat: no-repeat;
+  background-size: contain;  
+}
+
+.top-info__item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.top-info__item_1 {
+  background-image: url("../img/top-info-1.svg");
+}
+
+.top-info__item_2 {
+  background-image: url("../img/top-info-2.svg");
+}
+
+.top-info__item_3 {
+  background-image: url("../img/top-info-3.svg");
+}
+
+.top-info__decorate {
+  margin-top: -37px;
+}
+/*** top-info-1920px ***/
 
 
-
-/*** top-info-1280px ***/
-
-
-/*** Подвал footer-1280px ***/
+/*** Подвал footer-1920px ***/
+.footer {
+  padding: 20px 0 0;
+  background-color: var(--color-turquoiseBlue);
+}
 .footer__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.footer__top {
+  padding-bottom: 19px;
 }
 
 .footer__list {
@@ -1044,12 +1156,93 @@ ul {
   align-items: center;
 }
 
+.footer__link {
+  padding: 5px 5px 2px;
+  border: 2px solid transparent;
+  font-weight: 700;
+  -webkit-transition: border .4s ease-in-out;
+  -ms-transition: border .4s ease-in-out;
+  -moz-transition: border .4s ease-in-out;
+  -o-transition: border .4s ease-in-out;
+  transition: border .4s ease-in-out;
+}
+
+.footer__link:focus {
+  outline: none;
+  opacity: .5;
+}
+
+.footer__link:hover {
+  border: 2px solid var(--color-dark);
+}
+
+.footer__link:active {
+  opacity: .3;
+}
+
 .footer__item:not(:last-child) {
-  margin-right: 32px;
+  margin-right: 16px;
 }
 
 .footer__bottom {
-  padding: 0 12px;
+  padding: 2px 12px 7px;
   text-align: center;
+  background-color: var(--color-dark);
 }
-/*** // Подвал footer-1280px ***/
+
+.footer__text {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--color-athensGray);
+}
+/*** // Подвал footer-1920px ***/
+
+
+
+@media (max-width: 1303px) {
+  .container {
+    padding: 0 36px;
+  }
+
+
+  /*** hero-1303px ***/
+  .hero__text {
+    width: 65%;
+  }
+  /*** // hero-1303px ***/
+
+
+  /*** auction-bet-1303px ***/
+  .auction-bet__props {
+    flex-direction: column;
+  }
+
+  .auction-bet__wager {
+    margin-right: 0;
+    margin-bottom: 32px;
+    max-width: 297px;
+  }  
+
+  .auction-bet__timer {
+    max-width: 461px;
+  }
+  /*** // auction-bet-1303px ***/
+
+
+  /*** auction-card-1303px ***/
+  .auction-card__list {
+    grid-template-columns: repeat(3, 296px);
+    gap: 36px 32px;
+  }
+
+  /*** // auction-card-1303px ***/
+
+
+
+
+
+
+
+
+
+}
