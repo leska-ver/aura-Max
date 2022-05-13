@@ -729,11 +729,11 @@ ul {
 
 /*** new-1920px ***/
 .new {
-  padding: 90px 0;
+  padding: 90px 0 126px;
   background-color: var(--color-dark);
 }
 
-.new__container_clon-777 {/*Покажем в 777px*/
+.new__slider_clon-777 {/*Покажем в 777px*/
   display: none;
 }
 
@@ -742,6 +742,7 @@ ul {
   padding-left: 64px;
   color: var(--color-white);
   background: url("../img/fire.png") left center / 48px 48px no-repeat;
+  /* background: url("https://raw.githubusercontent.com/leska-ver/aura-Max/main/img/fire.png") left center / 48px 48px no-repeat; */
 }
 
 .new__slider {
@@ -750,11 +751,11 @@ ul {
   width: 100%;
 }
 
-.new__stikers {
+.new__stickers {
   display: flex;
 }
 
-.new__stikers picture:not(:last-child) {
+.new__stickers picture:not(:last-child) {
   margin-right: 28px;
 }
 
@@ -828,7 +829,7 @@ ul {
 }
 
 .subscribe__form-input {
-  margin-bottom: 15.5px;
+  margin-bottom: 16.2px;
   color: var(--color-white);
   background-color: var(--color-dark);
 }
@@ -1015,7 +1016,7 @@ ul {
 }
 
 .become-author__input { 
-  margin-bottom: 33px;
+  margin-bottom: 32.3px;
   border: 2px solid var(--color-athensGray);
   color: var(--color-jumbo);
   background-color: var(--color-white);
@@ -1047,7 +1048,7 @@ ul {
 
 /*** top-1920px ***/
 .top {
-  padding: 90px 0 72px;
+  padding: 90px 0 60px;
   background-color: var(--color-dark);
 }
 
@@ -1057,10 +1058,17 @@ ul {
 }
 
 .top__list {
-  display: grid;
-  grid-template-columns: repeat(2, 48.8%);
-  gap: 32px;
-  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top__item {
+  margin-bottom: 32px;
+  width: calc(50% - (32px / 2));
+}
+
+.top__item:not(:nth-child(2n)) {
+  margin-right: 32px;
 }
 
 .top__product {
@@ -1277,12 +1285,27 @@ ul {
   /*** // auction-card-1357px ***/
 
 
+  /*** new-1357px ***/
+  .new {
+    padding: 90px 0
+  }  
+
+  .new__stickers {
+    justify-content: center;
+  }
+  /*** // new-1357px ***/
+
+
   /*** subscribe-1357px ***/
   .subscribe__container {
     padding-bottom: 30px;
     background: url("../img/subscribe-bg-1024.png") calc(100% - 12px) 0% no-repeat;
     background-position-x: 93.5%;    
   }
+
+  .subscribe__form-input {
+    margin-bottom: 15.5px;
+  }  
   /*** // subscribe-1357px ***/
 
 
@@ -1326,10 +1349,14 @@ ul {
 
 
   /*** top-1357px ***/
-  .top__list {    
-    grid-template-columns: repeat(2, 48.3%);
-    gap: 33px;
+  .top-info {
+    padding: 33px 0;
   }
+
+  .top-info__list {
+    width: calc(50% - 32px / 2);
+  }
+  /*** // top-1357px ***/
 }
 
 
@@ -1380,10 +1407,6 @@ ul {
   .top__product-image {
     margin-right: 5px;
   } 
-
-  .top__product-info {
-    margin: 0 auto;
-  }
   
   .top__product-title {
     font-size: 34px;
@@ -1496,18 +1519,27 @@ ul {
   .new {
     padding: 65px 0 45px;
   }  
+
+  .new__title {
+    font-size: 45px;
+    line-height: 54px;
+  }
   
-  .new__container_none-777 {
+  .new__slider_none-777 {
     display: none;
   }
 
-  .new__container_clon-777 {
+  .new__slider_clon-777 {
     display: block;
   }
 
   .new__slider {
     margin-bottom: 35px;
   }  
+
+  .new__stickers {
+    justify-content: space-around;
+  }
 
   .subscribe__container {
     padding-bottom: 180px;
@@ -1535,33 +1567,51 @@ ul {
 
   .top__product {
     flex-direction: column;
+    height: 100%;
   }
 
   .top__product-image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     margin-right: 0;
     margin-bottom: 15px;
     padding: 15px;
     padding-bottom: 0;
     border-radius: 40px 40px 0px 0px;
-    width: 100%;
+    width: 100%;    
+    height: 132px;
   }  
+
   .top__product-image img {
     justify-content: center;
   }
 
   .top__product-info {
     margin: 0;
+    padding: 16px;
+  }
+  
+  .top-info__content {
+    flex-direction: column;
   }
 
-  
+  .top-info__content picture {
+    margin: 0 auto;
+  }
 
+  .top-info__list {
+    width: calc(523px - 32px / 2);
+  }
 
-
+  .top-info__decorate {
+    margin-top: 35px;
+  }
 }
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 525px) {
   .container {
     padding: 0 12px;
   }
@@ -1582,5 +1632,13 @@ ul {
 
   .header__wallet {
     right: 13px;
-  }  
+  } 
+
+  .header__item:not(:last-child) {
+    margin-right: 42px;
+  }
+  
+  .header__link {
+    font-size: 16px;
+  }
 }  
