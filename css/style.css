@@ -27,6 +27,7 @@
   --color-turquoiseBlue: #46f4db;
   --color-emerald: #57d272;
   --color-persianRed: #d13130;
+  --color-bittersweet: #ff6f6f;
   --color-athensGray: #ededf2;
   --color-manatee: #95959d;
   --color-jumbo: #717178;
@@ -123,6 +124,7 @@ ul {
   padding: 25px 74px;
   border-radius: 77px; 
   cursor: pointer;
+  outline: none;
   -webkit-transition: bacground-color .4s ease-in-out;
   -ms-transition: bacground-color .4s ease-in-out;
   -moz-transition: bacground-color .4s ease-in-out;
@@ -140,12 +142,12 @@ ul {
   border-radius: inherit;
   background: linear-gradient(180deg, #46F4DB 27.08%, #57D272 100%);
   opacity: 0;
+  pointer-events: none;
   -webkit-transition: opacity .4s ease-in-out;
   -ms-transition: opacity .4s ease-in-out;
   -moz-transition: opacity .4s ease-in-out;
   -o-transition: opacity .4s ease-in-out;
-  transition: opacity .4s ease-in-out;
-  pointer-events: none;
+  transition: opacity .4s ease-in-out;  
 }
 
 .btn--fill::after {
@@ -273,6 +275,10 @@ ul {
   color: var(--color-emerald);
 }
 
+.header__wallet {
+  display: none;
+}
+
 .header__button {
   padding: 14px 30px;
   border: 5px solid transparent;
@@ -347,8 +353,8 @@ ul {
   position: relative;
   outline: none;
   display: inline-block;
-  border-radius: 100px;
   padding: 25px 54px;
+  border-radius: 100px;  
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
@@ -365,9 +371,9 @@ ul {
 }
 
 .hero__btn--stroke .hero__btn-text {
-  border-radius: inherit;
-  padding: 20px 49px;
   display: inline-block;
+  padding: 20px 49px;
+  border-radius: inherit;  
   color: var(--color-white);
   background-color: var(--color-dark);
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -727,6 +733,10 @@ ul {
   background-color: var(--color-dark);
 }
 
+.new__container_clon-777 {/*Покажем в 777px*/
+  display: none;
+}
+
 .new__title {
   margin-bottom: 32px;
   padding-left: 64px;
@@ -764,7 +774,12 @@ ul {
   color: var(--color-white);
   background-color: transparent;
   opacity: 1;
-  transition: background-color .4s ease-in-out;
+  outline: none;
+  -webkit-transition: border .4s ease-in-out, background-color .4s ease-in-out;
+  -moz-transition: border .4s ease-in-out, background-color .4s ease-in-out;
+  -ms-transition: border .4s ease-in-out, background-color .4s ease-in-out;
+  -o-transition: border .4s ease-in-out, background-color .4s ease-in-out;
+  transition: border .4s ease-in-out, background-color .4s ease-in-out;
 }
 
 .new__pagination .swiper-pagination-bullet:not(:last-child) {
@@ -772,6 +787,16 @@ ul {
 }
 
 .new__pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-persianRed);
+}
+
+.new__pagination .swiper-pagination-bullet:focus, .new__pagination .swiper-pagination-bullet:hover {
+  border: 2px solid var(--color-bittersweet);
+  background-color: var(--color-bittersweet);
+}
+
+.new__pagination .swiper-pagination-bullet:active {
+  border: 2px solid var(--color-persianRed);
   background-color: var(--color-persianRed);
 }
 /*** // new-1920px ***/
@@ -1220,7 +1245,7 @@ ul {
   .auction-bet__wager {
     margin-right: 0;
     margin-bottom: 32px;
-    max-width: 297px;
+    max-width: max-content;
   }  
 
   .auction-bet__timer {
@@ -1242,7 +1267,7 @@ ul {
   }
   
   .auction-card__item:nth-child(-n+6) {
-      display: block;
+      display: flex;/*Для резины лучше ставить flex. Стили для js("Ещё")*/
   }
 
   .full .auction-card__item {
@@ -1256,7 +1281,7 @@ ul {
   .subscribe__container {
     padding-bottom: 30px;
     background: url("../img/subscribe-bg-1024.png") calc(100% - 12px) 0% no-repeat;
-    background-position-x: 93.5%;
+    background-position-x: 93.5%;    
   }
   /*** // subscribe-1357px ***/
 
@@ -1280,7 +1305,7 @@ ul {
   }
 
   .become-author__form {
-    --size-limiter: 624px;/*Для фоновой картинки - become-author__file*/
+    --size-limiter: 65.5%;/*Для фоновой картинки - become-author__file*/
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -1298,4 +1323,264 @@ ul {
     width: 100%;
   }
   /*** // Скачать файл become-author-1357px ***/
+
+
+  /*** top-1357px ***/
+  .top__list {    
+    grid-template-columns: repeat(2, 48.3%);
+    gap: 33px;
+  }
 }
+
+
+@media (max-width: 999px) {
+  .hero__text {
+    width: 100%;
+  }
+
+  .auction-bet__content {
+    justify-content: space-between;
+  }
+
+  .auction-bet__image {
+    margin-right: 20px;
+    width: 296px;
+    height: 296px;
+  }
+
+  .auction-bet__info {
+    width: 446px;
+  }
+
+  .subscribe__container {
+    background: url("../img/subscribe-bg-999.png") calc(100% - 12px) 0% no-repeat;
+    background-position-x: 96%;
+    background-position-y: 30px;
+  }
+
+  .subscribe__form {
+    max-width: 47%;
+  }
+
+  .become-author__text {
+    width: 100%;
+  }
+
+  .become-author__decorate {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 45px;
+  }
+
+  .become-author__form {
+    align-items: center;
+    background: none;
+  }
+
+  .top__product-image {
+    margin-right: 5px;
+  } 
+
+  .top__product-info {
+    margin: 0 auto;
+  }
+  
+  .top__product-title {
+    font-size: 34px;
+    line-height: 1;
+  }
+
+  .top__product-price {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 777px) {
+  .header__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__logo {
+    margin-bottom: 25px;
+  }
+  
+  .header__line {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    border: 1px solid #c4c4c4;
+    width: 100%;    
+  }
+  
+  .header__nav {
+    margin-right: 0;
+  }
+
+  .header__list {
+    margin: 18px 0 12px;
+    padding: 0;
+  }
+
+  .header__wallet {   
+    position: absolute; 
+    right: 36px;
+    display: block;
+    padding: 0;/*Чтобы button не кривил*/
+    border: 1px solid transparent;    
+    height: 30px;/*Чтобы button не кривил*/    
+    background-color: transparent;
+    -webkit-transition: outline .4s ease-in-out, fill .4s ease-in-out;
+    -moz-transition: outline .4s ease-in-out, fill .4s ease-in-out;
+    -ms-transition: outline .4s ease-in-out, fill .4s ease-in-out;
+    -o-transition: outline .4s ease-in-out, fill .4s ease-in-out;
+    transition: outline .4s ease-in-out, fill .4s ease-in-out;
+  }
+
+  .header__wallet:focus {
+    outline: 1px solid var(--color-black);
+    outline-offset: 4px;
+  }
+
+  .header__wallet:hover {
+    outline: 1px solid var(--color-emerald);
+  }
+
+  .header__wallet:hover path {
+    fill: var(--color-emerald);
+  }
+
+  .header__wallet:active {
+    outline: 1px solid var(--color-turquoiseBlue);
+  }
+
+  .header__wallet:active path {
+    fill: var(--color-turquoiseBlue);
+  }
+
+  .header__button {
+    display: none;
+  }
+
+  .hero {
+    padding: 73px 0;
+  }  
+
+  .auction-bet {
+    padding: 55px 0 30px;
+  }
+
+  .auction-bet__content {
+    justify-content: end;
+    flex-direction: column;
+  }
+
+  .auction-bet__image {
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+
+  .auction-bet__info {
+    margin: 0 auto;
+  }
+
+  .auction-card {
+    padding: 30px 0 60px;
+  }
+
+  .auction-card__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .new {
+    padding: 65px 0 45px;
+  }  
+  
+  .new__container_none-777 {
+    display: none;
+  }
+
+  .new__container_clon-777 {
+    display: block;
+  }
+
+  .new__slider {
+    margin-bottom: 35px;
+  }  
+
+  .subscribe__container {
+    padding-bottom: 180px;
+    background: url(../img/subscribe-bg-777.png) calc(100% - 12px) 0% no-repeat;
+    background-position-x: 50%;
+    background-position-y: 100%;
+  }
+
+  .subscribe__form {
+    margin: 0 auto;
+    max-width: 360px;
+  }
+
+  .become-author {
+    padding: 50px 0;
+  }
+
+  .become-author__form {
+    --size-limiter: 400px;
+  }
+  
+  .become-author__button {
+    padding: 23px 60px;
+  }  
+
+  .top__product {
+    flex-direction: column;
+  }
+
+  .top__product-image {
+    margin-right: 0;
+    margin-bottom: 15px;
+    padding: 15px;
+    padding-bottom: 0;
+    border-radius: 40px 40px 0px 0px;
+    width: 100%;
+  }  
+  .top__product-image img {
+    justify-content: center;
+  }
+
+  .top__product-info {
+    margin: 0;
+  }
+
+  
+
+
+
+}
+
+
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .header {
+    padding: 20px 0 9px;
+  }  
+
+  .header__logo {
+    margin-right: 0;
+    margin-bottom: 12px;
+    width: 75px;
+  }
+
+  .header__line {
+    top: 68px;    
+  }
+
+  .header__wallet {
+    right: 13px;
+  }  
+}  
