@@ -97,7 +97,7 @@ h4 {
   margin: 0;
   font-weight: 400;
   font-size: 48px;
-  line-height: 48px;
+  line-height: 1;
   color: var(--color-dark);
 }
 
@@ -1492,7 +1492,7 @@ ul {
   }  
 
   .auction-bet {
-    padding: 55px 0 30px;
+    padding: 81px 0 40px;
   }
 
   .auction-bet__content {
@@ -1510,7 +1510,7 @@ ul {
   }
 
   .auction-card {
-    padding: 30px 0 60px;
+    padding: 40px 0 60px;
   }
 
   .auction-card__list {
@@ -1681,11 +1681,90 @@ ul {
     padding: 11px 22px;
   }
 
+  .auction-bet__h3 {
+    margin-bottom: 31px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .auction-bet__span {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .auction-bet__span:before {
+    width: 5px;
+    height: 5px;
+  }
+
+  .auction-bet__image {
+    margin: 0;
+    margin-bottom: 31px;
+  }
+
+  .auction-bet__owner {
+    margin-bottom: 17px;
+  }  
+
+  .auction-bet__avatar {
+      margin-right: 8px;
+  }
+
+  .auction-bet__nickname, .auction-bet__caption, .auction-bet__price-dollars {
+    font-size: 16px;
+  }
+
+  .auction-bet__h4 {
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+
+  .auction-bet__props {
+    margin-bottom: 33px;
+  }
+
+  .auction-bet__wager {
+    margin-bottom: 17px;
+    padding: 17px 29px 16px 16px;
+    border-radius: 18px;
+  }  
+  
+  .auction-bet__price {
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+
+  .auction-bet__timer {
+    padding: 13px 20px 15px 16px;
+    border-radius: 20px;
+    max-width: max-content;
+    background-color: var(--color-dark);
+    background-image: none;
+  }
+
+  .auction-bet__price_white {
+    margin-bottom: 6px;
+  }
+
+  .auction-bet__button {
+    padding: 16px 41px;
+    font-size: 16px;
+  }
 
 
 
 
+  .new {
+    padding: 33px 0 45px;
+  }
 
+  .new__title {
+    padding-left: 33px;
+    font-size: 30px;
+    line-height: 36px;
+    background: url(../img/fire-320.png) left center / 25px 20px no-repeat;
+    /* background: url(https://raw.githubusercontent.com/leska-ver/aura-Max/main/img/fire.png) left center / 48px 48px no-repeat;*/
+  }
 
 
 
