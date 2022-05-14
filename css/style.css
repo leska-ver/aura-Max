@@ -733,6 +733,10 @@ ul {
   background-color: var(--color-dark);
 }
 
+.new__container {
+  position: relative;
+}
+
 .new__slider_clon-777 {/*Покажем в 777px*/
   display: none;
 }
