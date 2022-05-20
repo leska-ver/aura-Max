@@ -214,6 +214,37 @@ ul {
   padding: 0 12px;
 }
 
+/*биб swiper*/
+.swiper {
+  overflow: hidden;
+}
+
+/*Слайдер*/
+.swiper-wrapper {
+  height: 100%;
+}
+
+/*@keyframes в медиа запросы не ставять!!! .auction-card*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 /***Шапка header-1920px ***/
 .header {
   padding: 11px 0 9px;
@@ -588,7 +619,7 @@ ul {
 
 /*** auction-card-1920px ***/
 .auction-card {
-  padding: 44px 0 89px;
+  padding: 44px 0 90px;
 }
 
 .auction-card__h3 {
@@ -598,12 +629,29 @@ ul {
   line-height: 24px;
 }
 
+.auction-card__swiper {
+  width: 100%;
+}
+
 /*Карточки одной высоты*/
 .auction-card__list {
   display: grid;
   grid-template-columns: repeat(4, 296px);
+  grid-template-rows: repeat(2, 1fr);
   gap: 32px;
   margin-bottom: 33px;
+}
+
+/*биб*/
+.swiper-container-multirow-column>.swiper-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: unset;
+}
+
+.auction-card__item.swiper-slide {
+  height: auto;
 }
 
 .auction-card__item {
@@ -698,6 +746,7 @@ ul {
   text-align: center;
 }
 
+/*Кнопка Все события*/
 .auction-card__button {
   padding: 20px 74px;
   border: 5px solid var(--color-turquoiseBlue);
@@ -723,6 +772,27 @@ ul {
 .auction-card__button:active {
   border: 5px solid var(--color-emerald);
   background-color: var(--color-emerald); 
+}
+
+/*Мобильный слайдер. Не удалять! */
+.is-hidden {
+  display: none;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+.fade-out {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+}
+
+/*Кнопка "Все аукционы". Для .is-hidden */
+.auction-card__button {
+  display: block;
+  margin: 0 auto;
 }
 /*** // auction-card-1920px ***/
 
@@ -1133,38 +1203,62 @@ ul {
 
 .top-info__content {
   display: flex;
+  justify-content: space-between;
 }
 
 .top-info__list {  
   margin-right: 32px;
-  width: calc(63% - 32px / 2);
 }
 
 .top-info__item {
+  position: relative;
   padding-left: 40px;
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
-  color: #fff;  
+  color: var(--color-white);
   background-repeat: no-repeat;
-  background-size: contain;  
 }
 
 .top-info__item:not(:last-child) {
   margin-bottom: 16px;
 }
 
-.top-info__item_1 {
+/*Ставим иконки через before, т.к иконки режет в медиа 777рх*/
+.top-info__item_1::before {
+  content: '';
+  position: absolute;
   background-image: url("../img/top-info-1.svg");
+  width: 32px;
+  height: 32px;
+  margin-left: -40px;
 }
 
-.top-info__item_2 {
+.top-info__item_2::before {
+  content: '';
+  position: absolute;
   background-image: url("../img/top-info-2.svg");
+  width: 32px;
+  height: 32px;
+  margin-left: -40px;
 }
 
-.top-info__item_3 {
+.top-info__item_3::before {
+  content: '';
+  position: absolute;
   background-image: url("../img/top-info-3.svg");
-}
+  width: 32px;
+  height: 32px;
+  margin-left: -40px;
+} 
+
+
+
+
+
+
+
+
 
 .top-info__decorate {
   margin-top: -37px;
@@ -1235,6 +1329,25 @@ ul {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1357px) {
   .container {
     padding: 0 36px;
@@ -1264,27 +1377,11 @@ ul {
   }
   /*** // auction-bet-1357px ***/
 
-
+  
   /*** auction-card-1357px ***/
   .auction-card__list {
     grid-template-columns: repeat(3, 1fr);
-    gap: 36px 32px;
-    margin-bottom: 30px;
   }
-
-  /*Скрываем часть услуг*/
-  .auction-card__item {
-    display: none;
-  }
-  
-  .auction-card__item:nth-child(-n+6) {
-      display: flex;/*Для резины лучше ставить flex. Стили для js("Ещё")*/
-  }
-
-  .full .auction-card__item {
-      display: block;
-  }
-  /* // Скрываем часть услуг*/
   /*** // auction-card-1357px ***/
 
 
@@ -1355,11 +1452,9 @@ ul {
   .top-info {
     padding: 33px 0;
   }
-
-  .top-info__list {
-    width: calc(50% - 32px / 2);
-  }
   /*** // top-1357px ***/
+
+
 }
 
 
@@ -1382,6 +1477,10 @@ ul {
     width: 446px;
   }
 
+  .auction-card__item {
+    width: calc(100% / 2 - 20);    
+  }
+
   .new__slider {
     margin-bottom: 55px;
   }
@@ -1394,6 +1493,10 @@ ul {
 
   .subscribe__form {
     max-width: 47%;
+  }
+
+  .become-author {
+    padding: 82px 0 79px;
   }
 
   .become-author__text {
@@ -1411,18 +1514,24 @@ ul {
     background: none;
   }
 
+  .top {
+    padding: 60px 0 42px;
+  }
+
   .top__product-image {
     margin-right: 5px;
   } 
   
   .top__product-title {
     font-size: 34px;
-    line-height: 1;
   }
 
   .top__product-price {
     font-size: 16px;
   }
+
+
+  
 }
 
 @media (max-width: 777px) {
@@ -1517,7 +1626,12 @@ ul {
   .auction-card {
     padding: 40px 0 60px;
   }
-
+  
+  .auction-card__swiper {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
   .auction-card__list {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
@@ -1550,7 +1664,7 @@ ul {
 
   .subscribe__container {
     padding-bottom: 180px;
-    background: url(../img/subscribe-bg-777.png) calc(100% - 12px) 0% no-repeat;
+    background: url("../img/subscribe-bg-777.png") calc(100% - 12px) 0% no-repeat;
     background-position-x: 50%;
     background-position-y: 100%;
   }
@@ -1558,10 +1672,6 @@ ul {
   .subscribe__form {
     margin: 0 auto;
     max-width: 360px;
-  }
-
-  .become-author {
-    padding: 50px 0;
   }
 
   .become-author__form {
@@ -1582,7 +1692,6 @@ ul {
     align-items: flex-end;
     justify-content: center;
     margin-right: 0;
-    margin-bottom: 15px;
     padding: 15px;
     padding-bottom: 0;
     border-radius: 40px 40px 0px 0px;
@@ -1608,17 +1717,19 @@ ul {
   }
 
   .top-info__list {
-    width: calc(523px - 32px / 2);
+    margin-right: 0;
   }
 
   .top-info__decorate {
     margin-top: 35px;
   }
+
+  
 }
 
 
 
-@media (max-width: 525px) {
+@media (max-width: 515px) {
   .container {
     padding: 0 12px;
   }
@@ -1655,7 +1766,7 @@ ul {
 
   .hero {
     padding: 65px 0 210px;
-    background: url(../img/hero-stickers-320.png) bottom left no-repeat;
+    background: url("../img/hero-stickers-320.png") bottom left no-repeat;
     background-color: var(--color-dark);
   }
 
@@ -1756,19 +1867,71 @@ ul {
     font-size: 16px;
   }
 
+  /*Слайдер auction-card*/
+  .auction-card__container {
+    /*Чтобы слайд на слайд ненаезжал*/
+    overflow-x: hidden;
+  }
 
+  .auction-card__list.swiper-wrapper {
+    display: flex;
+  }
+  
+  .auction-card__item.swiper-slide {
+    width: 100%;
+    margin-right: 0;
+  }
 
+  .auction-card__article {
+    width: 85.7%;
+  }
+
+  .auction-card__button {
+    display: block;
+    padding: 10px 52px;
+  }
+
+  .swiper-pagination-bullet {
+    background: #666;
+  }
+
+  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-bottom: 2px;
+    margin-left: 11px;
+  }
+
+  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet:not(:last-child) {
+    margin-right: 2px;
+  }
+
+  .auction-card .pagination {
+    margin-top: -3px;
+  }
+
+  .auction-card .swiper-pagination-bullet {
+    width: 11px;
+    height: 11px;
+  }
+
+  .auction-card .swiper-pagination-bullet:not(:last-child) {
+    margin-right: 10px;
+  }    
+  
+  .pagination {
+    text-align: center;
+  }
+  /* // auction-card - 515px*/
 
   .new {
-    padding: 33px 0 34px;
+    padding: 33px 0 44px;
   }
 
   .new__title {
     padding-left: 33px;
     font-size: 30px;
     line-height: 36px;
-    background: url(../img/fire-320.png) left center / 25px 20px no-repeat;
-    /* background: url(https://raw.githubusercontent.com/leska-ver/aura-Max/main/img/fire-320.png) left center / 25px 20px no-repeat; */
+    background: url("../img/fire-320.png") left center / 25px 20px no-repeat;
+    /* background: url("https://raw.githubusercontent.com/leska-ver/aura-Max/main/img/fire-320.png") left center / 25px 20px no-repeat; */
   }
 
   .new__slider {
@@ -1784,7 +1947,8 @@ ul {
   }
 
   .new__pagination {
-    margin-left: 19px;
+    margin-left: 11px;
+    text-align: start;
   }
 
   .new__pagination .swiper-pagination-bullet {
@@ -1796,6 +1960,11 @@ ul {
   .new__pagination .swiper-pagination-bullet:not(:last-child) {
     margin: 0 11px 11px 0;
   }
+
+  .subscribe__container {
+    padding-bottom: 158px;
+    background: url("../img/subscribe-bg-320.png") 17% bottom / calc(83% - 12px) no-repeat;
+  }  
 
   .subscribe__title {
     margin-bottom: 16px;
@@ -1810,9 +1979,193 @@ ul {
   .subscribe__form-button {
     padding: 18px 51px 15px;
     font-size: 16px;
+  }
+  
+  .become-author {
+    padding-top: 82px;
+  }
+
+  .become-author__text {
+    width: 85%;
+  }
+
+  .become-author__title {
+    margin-bottom: 15px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .become-author__subtitle {
+    display: none;
+  }
+
+  .become-author__desrc {
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 28px;
+  }
+  
+  .become-author__decorate {
+    margin-bottom: 15px;
+  }
+
+  .become-author__form {
+    --size-limiter: 85.5%;
+    align-items: flex-start;
+  }
+
+  .become-author__file {
+    justify-content: flex-start;
+    margin-bottom: 17px;
+    padding: 47px 22px 46px;
+    min-height: max-content;
+  }
+
+  .become-author__file-icon {
+    width: 60px;
+    height: 60px;
   }  
 
+  .become-author__file-icon::before {
+    width: 24px;
+  }  
+
+  .become-author__file-icon::after {
+    height: 24px;
+  }  
+
+  .become-author__file-content {
+    font-size: 16px;
+  }  
+
+  .become-author__input {
+    margin-bottom: 17px;
+    padding: 15px 30px;
+    height: max-content;
+    font-size: 16px;
+  }
+
+  .become-author__button {
+    padding: 16px 58px;
+    font-size: 16px;
+  }
+
+  .top {
+    padding: 33px 0 25px;
+  }
+
+  .top__title {
+    margin-bottom: 15px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .top__list {
+    display: grid;
+    grid-template-columns: repeat(2, 132px);
+    gap: 17px 32px;
+  }
+
+  .top__item {
+    margin-bottom: 0;
+    width: max-content;
+  }  
+
+  .top__item:not(:nth-child(2n)) {
+    margin-right: 0;
+  }
+
+  .top__product {
+    align-items: flex-start;
+    border-radius: 21.6px;
+  }  
+
+  .top__product-image {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 11px 11px 0;
+    border-radius: 21.6px 21.6px 0px 0px;
+    height: max-content;
+  }
+
+  .top__product-info {
+    padding: 16px 14px;
+  }
+
+  .top__product-title {
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .top__product-price {
+    font-size: 12px;
+  }
+
+  .top__product-price-dollars {
+    display: block;
+  }
+
+  .top-info__title {
+    width: 70%;
+    font-size: 20px;
+  }  
+
+  .top-info__list {
+    margin-bottom: 4px;
+  }
+
+  .top-info__item {
+    width: 82%;
+    font-size: 16px;
+    line-height: 1;
+  }  
+
+  .top-info__item:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  .top-info__item:nth-child(2n) {
+    margin-bottom: 32px;
+  }
+
+  .top-info__item_2::before, .top-info__item_3::before {
+    top: -8px;
+  }
+
+  .top-info__content picture {
+    margin: 0;
+  }
+
+  .footer__top {
+    position: relative;
+    padding-bottom: 11px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+  }
+
+  .footer__logo {
+    margin-right: 0;
+    margin-bottom: 30px;
+    width: 75px;
+  }
+
+  .footer__line {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    border: 1px solid #c4c4c4;
+    width: 100%;
+  }
+
+  .footer__link {
+    font-size: 16px;
+  }
 
 
 
-}  
+
+
+  
+}

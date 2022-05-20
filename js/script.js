@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // });
 
 
-  //Для двух Слайдеров
+  //Для двух Слайдеров - new
   //Слайдер-1
   const swiper1 = new Swiper('.new__slider_none-777', {
     loop: true,
@@ -52,13 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  //Другие аукционы .auction-card__item//
-  const list = document.getElementById('auction-card__list_js');
-  const moreButton = document.getElementById('button-hidde');
-  moreButton.addEventListener('click', function () {
-    list.classList.toggle('full');
-  });
+  
 
+
+  
 
 
 
