@@ -51,7 +51,7 @@ body {
 }
 
 body {
-  min-width: 370px;
+  min-width: 320px;
   font-family: 'Muller', sans-serif;
   font-size: 20px;
   line-height: 1;
@@ -361,8 +361,7 @@ ul {
 /*** hero-1920px ***/
 .hero {
   padding: 161px 0;
-  background: url("../img/hero-stickers.png") top right no-repeat;
-  background-color: var(--color-dark);
+  background: url("../img/hero-stickers.png") top right var(--color-dark) no-repeat;
 }
 
 .hero__text {  
@@ -1009,6 +1008,7 @@ ul {
 }
 
 .become-author__file {
+  position: relative;/*Для .become-author__file-input там абсолют*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1355,6 +1355,10 @@ ul {
 
 
   /*** hero-1357px ***/
+  .hero {
+    background: url(../img/hero-stickers-1024.png) top right var(--color-dark) no-repeat;
+  }
+
   .hero__text {
     width: 65%;
   }
@@ -1477,10 +1481,6 @@ ul {
     width: 446px;
   }
 
-  .auction-card__item {
-    width: calc(100% / 2 - 20);    
-  }
-
   .new__slider {
     margin-bottom: 55px;
   }
@@ -1536,6 +1536,7 @@ ul {
 
 @media (max-width: 777px) {
   .header__container {
+    position: relative;/*<-Для линии*/
     flex-direction: column;
     align-items: flex-start;
   }
@@ -1546,7 +1547,7 @@ ul {
   
   .header__line {
     position: absolute;
-    top: 72px;
+    top: 60px;
     left: 0;
     border: 1px solid #c4c4c4;
     width: 100%;    
@@ -1603,7 +1604,16 @@ ul {
 
   .hero {
     padding: 73px 0;
-  }  
+  } 
+  
+  .hero__title {
+    font-size: 52px;
+    line-height: 63px;
+  }
+
+  .hero__btn:not(:last-child) {
+    margin-bottom: 17px;
+  }
 
   .auction-bet {
     padding: 81px 0 40px;
@@ -1722,11 +1732,8 @@ ul {
 
   .top-info__decorate {
     margin-top: 35px;
-  }
-
-  
+  }  
 }
-
 
 
 @media (max-width: 515px) {
@@ -1745,7 +1752,7 @@ ul {
   }
 
   .header__line {
-    top: 68px;    
+    top: 50px;    
   }
 
   .header__wallet {
@@ -1766,8 +1773,8 @@ ul {
 
   .hero {
     padding: 65px 0 210px;
-    background: url("../img/hero-stickers-320.png") bottom left no-repeat;
-    background-color: var(--color-dark);
+    background: url("../img/hero-stickers-320.png") bottom left var(--color-dark) no-repeat;
+    background-size: contain;
   }
 
   .hero__title {
@@ -1781,12 +1788,12 @@ ul {
     align-items: flex-start;
   }
 
+  .hero__btn:not(:last-child) {
+    margin-right: 0;
+  }  
+
   .hero__btn {    
     font-size: 16px;
-  }
-
-  .hero__btn:not(:last-child) {
-    margin-bottom: 17px;
   }
 
   .hero__btn--fill {
@@ -1816,6 +1823,10 @@ ul {
   .auction-bet__image {
     margin: 0;
     margin-bottom: 31px;
+  }
+
+  .auction-bet__info {
+    width: 100%;
   }
 
   .auction-bet__owner {
@@ -1867,10 +1878,24 @@ ul {
     font-size: 16px;
   }
 
-  /*Слайдер auction-card*/
+  /*Слайдер auction-card-515px*/
+  .auction-card {
+    padding: 40px 0 80px;
+  }
+
   .auction-card__container {
     /*Чтобы слайд на слайд ненаезжал*/
     overflow-x: hidden;
+  }
+
+  .auction-card__swiper {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .auction-card__list {
+    gap: 0;
+    margin-bottom: 58px;
   }
 
   .auction-card__list.swiper-wrapper {
@@ -1878,17 +1903,22 @@ ul {
   }
   
   .auction-card__item.swiper-slide {
-    width: 100%;
+    justify-content: center;
     margin-right: 0;
+    width: 100%;    
   }
 
-  .auction-card__article {
-    width: 85.7%;
+  .auction-card__article-column {
+    text-align: center;
+  }
+
+  .auction-card__owner {
+    justify-content: center;
   }
 
   .auction-card__button {
     display: block;
-    padding: 10px 52px;
+    padding: 10px 27px;
   }
 
   .swiper-pagination-bullet {
@@ -1904,8 +1934,9 @@ ul {
     margin-right: 2px;
   }
 
-  .auction-card .pagination {
-    margin-top: -3px;
+  .auction-card .pagination {    
+    position: absolute;
+    bottom: 76px;
   }
 
   .auction-card .swiper-pagination-bullet {
@@ -1935,20 +1966,11 @@ ul {
   }
 
   .new__slider {
-    margin-bottom: 30px;
-  }
-
-  .new__stickers {
-    justify-content: flex-start;
+    margin-bottom: 33px;
   }
 
   .new__stickers picture:not(:last-child) {
     margin-right: 32px;
-  }
-
-  .new__pagination {
-    margin-left: 11px;
-    text-align: start;
   }
 
   .new__pagination .swiper-pagination-bullet {
@@ -1958,12 +1980,12 @@ ul {
   }
 
   .new__pagination .swiper-pagination-bullet:not(:last-child) {
-    margin: 0 11px 11px 0;
+    margin: 0 9px 11px 0;
   }
 
   .subscribe__container {
-    padding-bottom: 158px;
-    background: url("../img/subscribe-bg-320.png") 17% bottom / calc(83% - 12px) no-repeat;
+    padding-bottom: 156px;
+    background: url(../img/subscribe-bg-320.png) 52% bottom / calc(96% - 12px) no-repeat;
   }  
 
   .subscribe__title {
@@ -1971,22 +1993,17 @@ ul {
   }
 
   .subscribe__form-input {
-    width: 85.5%;
     height: 50px;
     font-size: 16px;
   }
 
   .subscribe__form-button {
-    padding: 18px 51px 15px;
+    padding: 18px 51px 17px;
     font-size: 16px;
   }
   
   .become-author {
     padding-top: 82px;
-  }
-
-  .become-author__text {
-    width: 85%;
   }
 
   .become-author__title {
@@ -2010,7 +2027,7 @@ ul {
   }
 
   .become-author__form {
-    --size-limiter: 85.5%;
+    --size-limiter: 100%;
     align-items: flex-start;
   }
 
@@ -2019,7 +2036,7 @@ ul {
     margin-bottom: 17px;
     padding: 47px 22px 46px;
     min-height: max-content;
-  }
+  } 
 
   .become-author__file-icon {
     width: 60px;
@@ -2039,7 +2056,7 @@ ul {
   }  
 
   .become-author__input {
-    margin-bottom: 17px;
+    margin-bottom: 16px;
     padding: 15px 30px;
     height: max-content;
     font-size: 16px;
@@ -2051,7 +2068,7 @@ ul {
   }
 
   .top {
-    padding: 33px 0 25px;
+    padding: 33px 0 31px;
   }
 
   .top__title {
@@ -2063,7 +2080,9 @@ ul {
   .top__list {
     display: grid;
     grid-template-columns: repeat(2, 132px);
+    grid-template-rows: repeat(3, 1fr);
     gap: 17px 32px;
+    justify-content: center;
   }
 
   .top__item {
@@ -2089,7 +2108,12 @@ ul {
   }
 
   .top__product-info {
-    padding: 16px 14px;
+    padding: 18px 14px 9px;
+  }
+
+  .top__product-avatar {
+    margin-top: -2px;
+    margin-right: 3px;
   }
 
   .top__product-title {
@@ -2105,6 +2129,10 @@ ul {
     display: block;
   }
 
+  .top-info {
+    padding-bottom: 31px;
+  }
+
   .top-info__title {
     width: 70%;
     font-size: 20px;
@@ -2115,7 +2143,6 @@ ul {
   }
 
   .top-info__item {
-    width: 82%;
     font-size: 16px;
     line-height: 1;
   }  
@@ -2147,25 +2174,33 @@ ul {
 
   .footer__logo {
     margin-right: 0;
-    margin-bottom: 30px;
+    margin-bottom: 31px;
     width: 75px;
   }
 
   .footer__line {
     position: absolute;
-    top: 48px;
+    top: 49px;
     left: 0;
     border: 1px solid #c4c4c4;
     width: 100%;
   }
 
-  .footer__link {
-    font-size: 16px;
+  .footer__item:not(:last-child) {
+    margin-right: 32px;
   }
 
+  .footer__link {
+    font-size: 16px;
+  }  
+}
 
+@media (max-width: 350px) {
+  .auction-card__article-column {
+    text-align: left;
+  }
 
-
-
-  
+  .auction-card__owner {
+    justify-content: flex-start;
+  }
 }
