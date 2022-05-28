@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   
-  //---На мобильный Dekstop---
+  //---На мобильный Dekstop---Другие аукционы(auction-card)
     class Cards {
       isOpened = false;
   
