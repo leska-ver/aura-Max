@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.form');
   const telSelector = form.querySelector('input[type="tel"]');
   const inputMask = new Inputmask('+7 (999) 999-99-99');
-  // var im = new Inputmask('+7 (999) 999-99-99');
   inputMask.mask(telSelector);
 
   new window.JustValidate('.form', {
@@ -13,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
         required: true,
         function: () => {
           const phone = telSelector.inputmask.unmaskedvalue();
-          console.log(phone);
+          //console.log(phone);
           return Number(phone) && phone.length === 10;
         }
       }
     },
-    colorWrong: '#000',
+    colorWrong: '#FF6F6F',
     messages: {
       name: {
         required: 'Введите имя',
@@ -28,16 +27,16 @@ document.addEventListener('DOMContentLoaded', function () {
       email: {
         email: 'Введите корректный email',
         required: 'Введите email'
-      },
-      tel: {
-        required: 'Введите телефон',
-        function: 'Здесь должно быть 10 символов без +7'
-      }//,
-    //   text: {
-    //     required: 'Введите Instagram',
-    //     minLength: 'Введите 15 и более символов',
-    //     maxLength: 'Запрещено вводить более 25 символов'
-    //   }
+      }, //На этом проэкте они не нужны.
+    //   tel: {
+    //     required: 'Введите телефон',
+    //     function: 'Здесь должно быть 10 символов без +7'
+    //  },
+      text: {
+        required: 'Некорректный формат',
+        minLength: 'Введите 15 и более символов',
+        maxLength: 'Запрещено вводить более 25 символов'
+      }
     },
 
     submitHandler: function (thisForm) {
@@ -61,5 +60,29 @@ document.addEventListener('DOMContentLoaded', function () {
       thisForm.reset();
     }
   })
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });

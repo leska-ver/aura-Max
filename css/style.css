@@ -245,6 +245,28 @@ ul {
   }
 }
 
+/***Стилазация фразы ошибки***/
+.label-phone {
+  display: none;
+}
+
+.label {  
+  position: relative;  
+}
+
+.label .form-input.js-validate-error-field {  
+  border: 2px solid #FF6F6F !important;  
+}
+
+.js-validate-error-label {
+  position: absolute;
+  top: 5px;
+  left: 35px;
+  font-size: 12px;
+  font-weight: 400;
+}
+/***Конец стилазация фразы ошибки***/
+
 /***Шапка header-1920px ***/
 .header {
   padding: 11px 0 9px;
@@ -919,33 +941,33 @@ ul {
   background-color: var(--color-turquoiseBlue);
 }
 
-/*Для формы отправки*/
-.form__label {
-  position: relative;
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.js-validate-error-label {
-  position: absolute;
-  right: 5px;
-  top: 100%;
-}
-/* // Для формы отправки*/
-
-/***Стилазация фразы ошибки***/
 .subscribe__label {
   /*общий*/
   position: relative;
   width: 100%;
 }
 
-.js-validate-error-label {
-  position: absolute;
-  top: -7px;
-  left: 3px;
+.subscribe__form-input {
+  border: 2px solid transparent;
+  -webkit-transition: border .4s ease-in-out;
+  -ms-transition: border .4s ease-in-out;
+  -moz-transition: border .4s ease-in-out;
+  -o-transition: border .4s ease-in-out;
+  transition: border .4s ease-in-out;
 }
-/***Конец стилазация фразы ошибки***/
+
+.subscribe__form-input:focus {
+  border: 2px solid #fff;
+  outline: none;
+}
+
+.subscribe__form-input:hover {
+  border: 2px dashed #fff;
+}
+
+.subscribe__form-input:active {
+  border: 2px dotted #fff;
+}
 
 /***checkbox***/
 .subscribe__checkbox-content {
@@ -975,8 +997,7 @@ ul {
   border: 1px solid var(--color-white);
   width: 14px;
   height: 14px;
-  background-color: transparent;
-  
+  background-color: transparent;  
 }
 
 .subscribe__checkbox-label::after {
@@ -1123,6 +1144,12 @@ ul {
   line-height: 30px;
   color: var(--color-manatee);
 }
+
+/***Стилазация фразы ошибки***/
+.become-author__label .js-validate-error-label {
+  color: #717178 !important;
+}
+/*** // Стилазация фразы ошибки***/
 
 .become-author__input { 
   margin-bottom: 32.3px;
@@ -1438,7 +1465,7 @@ ul {
 
   /*** subscribe-1357px ***/
   .subscribe__container {
-    padding-bottom: 30px;
+    padding-bottom: 11px;
     background: url("../img/subscribe-bg-1024.png") calc(100% - 12px) 0% no-repeat;
     background-position-x: 93.5%;    
   }
@@ -1479,6 +1506,12 @@ ul {
 
   .become-author__file, .become-author__input {
     max-width: var(--size-limiter);
+  }
+
+  .become-author__label {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;    
   }
 
   .become-author__limiter {
@@ -1548,6 +1581,10 @@ ul {
   .become-author__form {
     align-items: center;
     background: none;
+  }
+
+  .become-author__label {
+    justify-content: center;
   }
 
   .top {
@@ -2020,7 +2057,7 @@ ul {
   }
 
   .subscribe__container {
-    padding-bottom: 156px;
+    padding-bottom: 136px;
     background: url(../img/subscribe-bg-320.png) 52% bottom / calc(96% - 12px) no-repeat;
   }  
 
@@ -2034,7 +2071,7 @@ ul {
   }
 
   .subscribe__form-button {
-    padding: 18px 51px 17px;
+    padding: 18px 51px 14px;
     font-size: 16px;
   }
   
@@ -2216,7 +2253,7 @@ ul {
 
   .footer__line {
     position: absolute;
-    top: 49px;
+    top: 51px;
     left: 0;
     border: 1px solid #c4c4c4;
     width: 100%;

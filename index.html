@@ -550,119 +550,30 @@
         </section>
         <section class="subscribe">
           <div class="container subscribe__container">
-            <h3 class="subscribe__title h3">Будь в курсе новинок! Подпишись на рассылку!</h3>
-             <!-- <form class="subscribe__form form" action="#" method="POST" enctype="multipart/form-data">
+            <h3 class="subscribe__title h3">Будь в курсе новинок! Подпишись на рассылку!</h3>             
+            <form action="mail.php" class="subscribe__form form" method="POST" enctype="multipart/form-data">
               <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
               <input type="hidden" name="form_subject" value="Тема письма">
-              <label class="subscribe__label">  
-                <input class="subscribe__form-input form-input" type="text" name="name" placeholder="Имя*" data-validate-field="name"
-                maxlength="10">
+              <label class="subscribe__label label">  
+                <input class="subscribe__form-input form-input" type="text" data-validate-field="name" name="name" placeholder="Имя*" maxlength="10">
               </label> 
-              <label class="subscribe__label"> 
+              <label class="subscribe__label label"> 
                 <input class="subscribe__form-input form-input" type="email" name="email" placeholder="E-mail" data-validate-field="email" maxlength="25" minlength="6">
               </label> 
+              <label class="subscribe__label-phone label-phone">
+                <input class="input input-tel" type="tel" data-validate-field="tel" name="Телефон"
+                  placeholder="Введите телефон">
+              </label>
               <button class="subscribe__form-button btn btn--fill">
                 <span class="btn__text">Подписаться</span>
-              </button>              
+              </button> 
               <div class="subscribe__checkbox-content">
                 <input class="subscribe__checkbox-input" id="formAgreement" checked type="checkbox" name="agreement" required>
                 <label class="subscribe__checkbox-label" for="formAgreement" type="checkbox" name="rules">
                   <span class="subscribe__form-checkbox-text">Согласен на обработку персональных данных</span>
                 </label>
-              </div>              
-            </form>             -->
-            
-
-
-
-
-
-
-            <form action="mail.php" enctype="multipart/form-data" class="recording__form form" id="checkboxForm"
-            method="POST">
-            <input type="hidden" name="admin_email[]" value="mariasaitjafsiatara@yandex.kz">
-            <input type="hidden" name="form_subject" value="Тема письма">
-            <div class="recording__block">
-              <!--data здесь он обрабатывает плагин валидатор кода-->
-              <label class="recording__label">
-                <input class="recording__input" type="text" name="name" placeholder="Имя*" data-validate-field="name"
-                  maxlength="10">
-              </label>
-              <label class="recording__label">
-                <input class="recording__input" type="tel" name="tel" placeholder="Телефон*" data-validate-field="tel"
-                  data-validate-rules="phone">
-              </label>
-              <label class="recording__label">
-                <input class="recording__input" type="text" name="paket" placeholder="Пакет услуг">
-              </label>
-              <label class="recording__label">
-                <input class="recording__input" type="text" name="kol" placeholder="Количество участников"
-                  maxlength="3">
-              </label>
-              <label class="recording__label">
-                <input class="recording__input" type="text" name="data" placeholder="Примерная дата" maxlength="50">
-              </label>
-              <label class="recording__label">
-                <input class="recording__input" type="text" name="insta" placeholder="Ваш Instagram"
-                  data-validate-field="text" maxlength="50">
-              </label>
-            </div>
-            <div class="recording__form-input">
-              <label class="recording__label">
-                <input class="recording__input recording__input_margin" type="text" name="message"
-                  placeholder="Пожелания к съемке" maxlength="1000">
-              </label>
-            </div>
-            <div class="recording__form-item">
-              <div class="recording__checkbox">
-                <input id="formAgreement" checked type="checkbox" name="agreement" class="recording__checkbox-input" required>
-                <label for="formAgreement" class="recording__checkbox-label" type="checkbox"
-                  name="rules">
-                  <span>Я даю своё согласие на обработку персональных данных в соответствии с
-                    <a class="recording__checkbox-link modalGo__link-js" data-path="modalGo-popup">Условиями&nbsp;*</a>
-                  </span>
-                </label>
-              </div>
-            </div>
-            <button class="recording__button link" type="submit" value="Заказать фотосессию">
-              Заказать фотосессию
-            </button>
-          </form>
-
-
-
-
-
-
-
-            
-
-
-            <!-- <form action="#" class="form" method="POST" enctype="multipart/form-data">
-              <label class="form__label">
-                <input class="input input-name" type="text" data-validate-field="name" name="Имя" placeholder="Введите имя">
-              </label>
-              <label class="form__label">
-                <input class="input input-mail" type="email" data-validate-field="email" name="Email"
-                  placeholder="Введите email">
-              </label>
-              <label class="form__label">
-                <input class="input input-tel" type="tel" data-validate-field="tel" name="Телефон"
-                  placeholder="Введите телефон">
-              </label>
-              <label class="form__label">
-                <textarea class="textarea" name="Сообщение" id="" cols="30" rows="10"
-                  placeholder="Введите ваше сообщение"></textarea>
-              </label>
-              <input class="input" type="file" name="file[]" multiple id="myfile">
-              <button class="button">Отправить</button>
-            </form> -->
-
-
-
-
-
-
+              </div> 
+            </form>
           </div>
         </section>
         <section class="become-author">
@@ -678,20 +589,27 @@
                 Отправь нам от трёх до пяти своих работ и напиши свой ник в&nbsp;телеграме. Если наши кураторы решат, что нам по пути, то мы обязательно свяжемся с тобой и обговорим условия сотрудничества! <b>Удачи!</b>
               </p>
               <img class="become-author__decorate" src="img/become-decorate.png" alt="Стикер рук">
-            </div>  
-            <div action="#" class="become-author__form">              
+            </div>
+            <form action="mail.php" class="become-author__form form" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
+              <input type="hidden" name="form_subject" value="Тема письма">
+              <label class="subscribe__label-phone label-phone">
+                <input class="input input-tel" type="tel" data-validate-field="tel" name="Телефон" placeholder="Введите телефон">
+              </label>
               <label class="become-author__file">
                 <input class="become-author__file-input" type="file" accept="image/*">
                 <span class="become-author__file-icon"></span>
                 <span class="become-author__file-content">Прикрепить работы (.jpeg / .png)</span>
               </label>
-              <input type="text" class="become-author__input form-input" placeholder="@telegram_nickname" name="telegram_nick"> 
+              <label class="become-author__label label">
+                <input type="text" class="become-author__input form-input" placeholder="@telegram_nickname" name="text" data-validate-field="text" maxlength="25" minlength="6">
+              </label> 
               <div class="become-author__limiter">
                 <button class="become-author__button btn btn--fill">
                   <span class="btn__text">Отправить</span>
                 </button>
               </div>
-            </div>
+            </form>
           </div>  
         </section>
         <section class="top"><!--В этом блоке резина другая, она карточки с резинить в 777px. В больших медиа не смогла поставить, т.к стикер стоит рядом с инфо текстом.-->
@@ -884,6 +802,6 @@
     <!-- Мой js -->
     <script src="js/script.js"></script>
     <script src="js/auction-card.js"></script>
-    <!-- <script src="js/subscribe.js"></script> -->
+    <script src="js/subscribe.js"></script>
   </body>
 </html>
